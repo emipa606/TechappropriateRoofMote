@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <TARM.UseLowtechRoof>Use wood texture for low-tech roof mote</TARM.UseLowtechRoof>
+  <TARM.UseHightechRoof>Use plasteel texture for high-tech roof mote</TARM.UseHightechRoof>
+  <TARM.CurrentModVersion>Installed mod-version: {0}</TARM.CurrentModVersion>
+</LanguageData>

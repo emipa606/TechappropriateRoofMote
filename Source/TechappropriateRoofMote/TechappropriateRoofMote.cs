@@ -21,11 +21,16 @@ public static class TechappropriateRoofMote
 
     public static ThingDef GetRoofMote()
     {
-        if (multiAnalyzer.IsFinished)
+        if (TechappropriateRoofMoteMod.Instance.Settings.UseHightechRoof && multiAnalyzer.IsFinished)
         {
             return moteTempRoofHighTech;
         }
 
-        return electricity.IsFinished ? ThingDefOf.Mote_TempRoof : moteTempRoofLowTech;
+        if (TechappropriateRoofMoteMod.Instance.Settings.UseLowtechRoof && !electricity.IsFinished)
+        {
+            return moteTempRoofLowTech;
+        }
+
+        return ThingDefOf.Mote_TempRoof;
     }
 }
