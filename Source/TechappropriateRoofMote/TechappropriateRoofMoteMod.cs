@@ -1,4 +1,5 @@
-﻿using Mlie;
+﻿using System.Linq;
+using Mlie;
 using UnityEngine;
 using Verse;
 
@@ -36,7 +37,7 @@ internal class TechappropriateRoofMoteMod : Mod
     /// <returns></returns>
     public override string SettingsCategory()
     {
-        return "TechappropriateRoofMote";
+        return "Tech-appropriate Roof Mote";
     }
 
     /// <summary>
@@ -48,8 +49,31 @@ internal class TechappropriateRoofMoteMod : Mod
     {
         var listingStandard = new Listing_Standard();
         listingStandard.Begin(rect);
+        listingStandard.CheckboxLabeled("TARM.BaseOnTechlevel".Translate(), ref Settings.BaseOnTechlevel,
+            "TARM.BaseOnTechlevelTT".Translate());
         listingStandard.CheckboxLabeled("TARM.UseLowtechRoof".Translate(), ref Settings.UseLowtechRoof);
+        if (!Settings.BaseOnTechlevel && Settings.UseLowtechRoof &&
+            listingStandard.ButtonTextLabeled("TARM.LowTechLimit".Translate(), Settings.LowTechLimitDef?.label))
+        {
+            Find.WindowStack.Add(new FloatMenu(TechappropriateRoofMote.AllResearchProjectDefs
+                .Select(def => new FloatMenuOption(def.label, () =>
+                {
+                    Settings.LowTechLimit = def.defName;
+                    Settings.Write();
+                })).ToList()));
+        }
+
         listingStandard.CheckboxLabeled("TARM.UseHightechRoof".Translate(), ref Settings.UseHightechRoof);
+        if (!Settings.BaseOnTechlevel && Settings.UseHightechRoof &&
+            listingStandard.ButtonTextLabeled("TARM.LowTechLimit".Translate(), Settings.HighTechLimitDef?.label))
+        {
+            Find.WindowStack.Add(new FloatMenu(TechappropriateRoofMote.AllResearchProjectDefs
+                .Select(def => new FloatMenuOption(def.label, () =>
+                {
+                    Settings.HighTechLimit = def.defName;
+                    Settings.Write();
+                })).ToList()));
+        }
 
         if (currentVersion != null)
         {

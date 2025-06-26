@@ -1,5 +1,8 @@
 # Changelog for TechappropriateRoofMote
 
+1.6.2 - Added setting to base on colony tech-level, or choose what research should be the limits
+
+
 1.6.1 - Added mod-settings for the two roof-motes
 
 

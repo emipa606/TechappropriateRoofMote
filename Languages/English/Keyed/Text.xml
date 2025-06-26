@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <TARM.UseLowtechRoof>Use wood texture for low-tech roof mote</TARM.UseLowtechRoof>
+  <TARM.LowTechLimit>Research that has to be finished to not use the low-tech roof mote</TARM.LowTechLimit>
+  <TARM.HighTechLimit>Research that has to be finished to use high-tech roof mote</TARM.HighTechLimit>
+  <TARM.BaseOnTechlevel>Base on player tech level instead of research</TARM.BaseOnTechlevel>
+  <TARM.BaseOnTechlevelTT>When using a mod that changes your colony tech-level you can base the roof texture on this instead</TARM.BaseOnTechlevelTT>
   <TARM.UseHightechRoof>Use plasteel texture for high-tech roof mote</TARM.UseHightechRoof>
   <TARM.CurrentModVersion>Installed mod-version: {0}</TARM.CurrentModVersion>
 </LanguageData>

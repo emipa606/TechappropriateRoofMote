@@ -6,6 +6,7 @@ The default graphics shown when pawns build a roof is a generic steel corrugated
 As I often do tribal colonies it seems a bit off so I made this mod to give it a more realistic feel.
 Default it will now show a wood-roof until the colony has researched Electricity, when the default graphics will be shown.
 When the colony has researched Multianalyzer, a more plasteel-like graphic will be shown.
+If you only want to use one of the textures, there are mod-options for that.
 
 Hope someone will find it useful!
 
