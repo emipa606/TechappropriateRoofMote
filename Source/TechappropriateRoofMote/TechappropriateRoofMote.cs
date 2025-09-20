@@ -29,7 +29,7 @@ public static class TechappropriateRoofMote
             if (TechappropriateRoofMoteMod.Instance.Settings.BaseOnTechlevel &&
                 Faction.OfPlayerSilentFail.def.techLevel > TechLevel.Industrial ||
                 !TechappropriateRoofMoteMod.Instance.Settings.BaseOnTechlevel &&
-                TechappropriateRoofMoteMod.Instance.Settings.LowTechLimitDef.IsFinished)
+                TechappropriateRoofMoteMod.Instance.Settings.HighTechLimitDef.IsFinished)
             {
                 return moteTempRoofHighTech;
             }
@@ -43,7 +43,7 @@ public static class TechappropriateRoofMote
         if (TechappropriateRoofMoteMod.Instance.Settings.BaseOnTechlevel &&
             Faction.OfPlayerSilentFail.def.techLevel < TechLevel.Industrial ||
             !TechappropriateRoofMoteMod.Instance.Settings.BaseOnTechlevel &&
-            !TechappropriateRoofMoteMod.Instance.Settings.HighTechLimitDef.IsFinished)
+            !TechappropriateRoofMoteMod.Instance.Settings.LowTechLimitDef.IsFinished)
         {
             return moteTempRoofLowTech;
         }
