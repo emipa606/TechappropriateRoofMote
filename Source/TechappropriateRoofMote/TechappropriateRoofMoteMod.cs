@@ -65,7 +65,7 @@ internal class TechappropriateRoofMoteMod : Mod
 
         listingStandard.CheckboxLabeled("TARM.UseHightechRoof".Translate(), ref Settings.UseHightechRoof);
         if (!Settings.BaseOnTechlevel && Settings.UseHightechRoof &&
-            listingStandard.ButtonTextLabeled("TARM.LowTechLimit".Translate(), Settings.HighTechLimitDef?.label))
+            listingStandard.ButtonTextLabeled("TARM.HighTechLimit".Translate(), Settings.HighTechLimitDef?.label))
         {
             Find.WindowStack.Add(new FloatMenu(TechappropriateRoofMote.AllResearchProjectDefs
                 .Select(def => new FloatMenuOption(def.label, () =>
