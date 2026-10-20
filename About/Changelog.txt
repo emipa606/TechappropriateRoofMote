@@ -1,5 +1,9 @@
 # Changelog for TechappropriateRoofMote
 
+1.7.0 - Mod updated for 1.7 and passed autotests
+Used DeepL to update translations for German, ChineseSimplified, French
+
+
 1.6.3 - Fixed roof-mote based on research tech, thanks Ilunak
 Used DeepL to update translations for ChineseSimplified, French, German
 

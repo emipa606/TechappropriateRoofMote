@@ -1,6 +1,6 @@
 # [Tech-appropriate Roof Mote](https://steamcommunity.com/sharedfiles/filedetails/?id=3508317118)
 
-![Image](https://i.imgur.com/iCj5o7O.png)
+![Image](https://img.litet.net/logos/Self-Info.png)
 
 The default graphics shown when pawns build a roof is a generic steel corrugated roof.
 As I often do tribal colonies it seems a bit off so I made this mod to give it a more realistic feel.
@@ -12,13 +12,16 @@ You can also select what research should be the limits or, if you are using a mo
 
 Hope someone will find it useful!
 
-![Image](https://i.imgur.com/Ds0rBAD.png)
+If you want more textures to choose from, check out [Tech-appropriate Roof Mote Retexture
+](https://steamcommunity.com/sharedfiles/filedetails/?id=3666754849) by Nishe!
+
+![Image](https://img.litet.net/logos/Self-SupportAndDonations.png)
 
 Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my [Wishlist](https://store.steampowered.com/wishlist/id/Mlie) or buy me a cup of tea.
 
-[![Image](https://i.imgur.com/VWG0yff.png)](https://ko-fi.com/G2G55DDYD)
+[![Image](https://img.litet.net/logos/Kofi-Small.png)](https://ko-fi.com/G2G55DDYD)
 
-![Image](https://i.imgur.com/5xwDG6H.png)
+![Image](https://img.litet.net/logos/Self-ReportingIssues.png)
 
 
 
@@ -32,4 +35,4 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/TechappropriateRoofMote?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3508317118) | tags:  realistic
+[![Image](https://img.shields.io/github/v/release/emipa606/TechappropriateRoofMote?label=latest%20version&style=plastic&labelColor=0070cd&color=white)](https://steamcommunity.com/sharedfiles/filedetails/changelog/3508317118) | 1.6, Mod, 1.5, 1.4

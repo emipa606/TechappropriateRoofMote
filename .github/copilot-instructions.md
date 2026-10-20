@@ -1,64 +1,66 @@
-# Copilot Instruction File for Tech-appropriate Roof Mote Mod
+# GitHub Copilot Instructions for Tech-appropriate Roof Mote Mod
 
 ## Mod Overview and Purpose
 
-**Mod Name:** Tech-appropriate Roof Mote
+The **Tech-appropriate Roof Mote** mod for RimWorld is designed to enhance the aesthetic and immersive experience of roof construction in the game by changing roof mote graphics according to the technological progress of a colony. This mod addresses the default, somewhat anachronistic appearance of roofs being constructed as steel corrugated types regardless of the colony's tech level. 
 
-This mod enhances the immersion and visual representation of roofing in RimWorld by changing the default roofing graphics based on the player's technological progress. Instead of the generic steel corrugated roof graphics shown when pawns build roofs, the mod displays a wood-roof graphic initially. Once the colony achieves certain research milestones, such as researching Electricity or Multianalyzer, the graphics update to reflect more advanced materials like metal or plasteel.
+### Key Features and Systems
 
-## Key Features and Systems
+1. **Dynamic Roof Graphics**:  
+   - **Wood-roof Graphic**: Displayed by default until the colony researches Electricity.
+   - **Default Steel-roof Graphic**: Used once the Electricity research is done.
+   - **Advanced Plasteel-roof Graphic**: Displays after researching Multianalyzer.
 
-1. **Dynamic Roof Graphics:**
-   - Displays a wood-roof graphic by default.
-   - Changes to metal roof graphics after the colony researches Electricity.
-   - Upgrades to plasteel-like graphics once Multianalyzer is researched.
-
-2. **Player Customization:**
-   - Mod options allow players to select which roof texture to use.
-   - Players can choose specific research milestones for changing roof graphics.
-   - Supports mods that modify colony tech levels dynamically.
+2. **Customization Options**:
+   - Limited mod options allow players to choose specific textures.
+   - Players can define their own research milestones for texture changes.
+   - Option to synchronize with colony tech-level progression if influenced by other mods.
 
 ## Coding Patterns and Conventions
 
-- **Class Structure:**
-  - `TechappropriateRoofMote`: Static utility class for roof graphic updates.
-  - `TechappropriateRoofMoteMod`: Inherits from `Mod`, handling initialization and settings.
-  - `TechappropriateRoofMoteSettings`: Inherits from `ModSettings`, managing user configurations.
-
-- **Naming Conventions:**
-  - Follow PascalCase for class and method names.
-  - Use meaningful names that describe the purpose and function clearly.
-
-- **Code Organization:**
-  - Keep classes focused on single responsibilities.
-  - Maintain separation between graphic handling and mod settings.
+- **C# Conventions**: Utilize PascalCase for class names and methods, and camelCase for local variables. Each class is tailored for single responsibility with clearly defined members.
+- **XML File Structure**: Follow RimWorld's XML conventions for `ThingDef` entries, using descriptive IDs and labels for compatibility with translations.
 
 ## XML Integration
 
-- This mod does not use XML files directly but interacts with RimWorld’s graphics system and research databases.
-- Ensure that XML references, like `.xml` files for defining graphics paths, are correctly set in the game's asset manager.
+- **`ThingDef` Definitions**: The XML files `Tech_RoofMotes.xml` define custom roof motifs corresponding to tech levels.
+- **Localization and Mod Compatibility**: Ensure identifiers are consistent with the naming scheme used across XML files and linked with the appropriate C# logic.
 
 ## Harmony Patching
 
-- **Harmony Usage:**
-  - Use Harmony to patch methods related to roof construction.
-  - Ensure patches do not conflict with other mods by careful method targeting and using `Prefix` or `Postfix` appropriately.
-  - Leverage `ThingMaker_MakeThing` static class for creating roof objects with patched graphics logic.
+This mod relies on the **Harmony** library to apply runtime patches, ensuring that changes to roof graphics are seamlessly integrated without altering the original game code directly.
+
+- **Patch Implementation**: 
+    - The `ThingMaker_MakeThing.cs` file contains a `Prefix` method, where Harmony applies dynamic behavior before the default game logic.
+    - Ensure patches are reversible and do not disrupt normal game functions if the mod is disabled.
 
 ## Suggestions for Copilot
 
-- **Code Completion:**
-  - Assist in generating method stubs in `TechappropriateRoofMote` for handling graphic changes.
-  - Suggest Harmony patch decorations and layout for method patches.
+- **Code Retrieval**: Use Copilot to assist in retrieving methods related to dynamic graphic changes based on research completion.
+- **Algorithm Suggestions**: Leverage Copilot to suggest logic improvements for determining when roof graphics should transition based on tech level.
+- **Optimization Patterns**: Utilize Copilot for potential optimizations in how textures are managed and retrieved during gameplay transitions.
+- **Localization Assistance**: Leverage Copilot to draft translation templates or identify key phrases for localization efforts.
 
-- **Project Organization:**
-  - Provide scaffolding for new settings in `TechappropriateRoofMoteSettings`.
-  - Display template for mod option menus to integrate user choice seamlessly.
+### Final Note
 
-- **Documentation:**
-  - Auto-generate XML documentation comments for public methods to maintain self-explanatory code.
+This mod's functionality can be expanded or customized further based on user feedback. Additional textures or more detailed tech level integration could be explored if there's substantial interest or community contributions. For visual customization enthusiasts, the **Tech-appropriate Roof Mote Retexture** by Nishe is recommended for additional options.
 
-- **Error Handling:**
-  - Offer patterns for safe error checking when interacting with game state or third-party mods.
+---
 
-This file should guide developers in using GitHub Copilot to streamline the coding process, integrate with respect to the game’s architecture, and maintain best practices for mod development.
+Developers working on the mod should ensure that all code contributions align with these guidelines to maintain consistency, performance, and robustness within the mod framework.
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+
